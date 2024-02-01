@@ -8,7 +8,7 @@ author, and this description to match your project!
 
 "use strict";
 
-let voice = new p5.Speech();
+let recongnizer = new p5.SpeechRec();
 
 /**
 Description of preload
@@ -19,9 +19,12 @@ function preload() {
 
 
 /**
-Description of setup
+Description of setupSD
 */
 function setup() {
+
+recongnizer.onResult = handleResult;
+recongnizer.start();
 
 }
 
@@ -34,5 +37,11 @@ function draw() {
 }
 
 function mousePressed() {
-    voice.speak('I love boyfriend chan very much');
+    //voice.speak('I love boyfriend chan very much');
+}
+
+function handleResult() {
+    console.log(recongnizer.resultString);
+
+
 }
