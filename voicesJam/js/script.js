@@ -1,10 +1,10 @@
 /**
-Title of Project
-Author Name
+Voices Jam : The guessing game
+Arianna Narita
 
-This is a template. You must fill in the title,
-author, and this description to match your project!
-*/
+This simulation is basically very simple since it's my first time using audio/voice in a project.
+The goal: Guess the character based off of the colour blocks being shown 
+Speech aspect: The user has to vocally say the character and the computer will wait until the right answer is said 
 
 "use strict";
 
