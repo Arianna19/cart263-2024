@@ -13,6 +13,10 @@ Process: (start with 5 levels of difficulty)
 4. Change the screen when guessed right
 
 **/
+//image names for the blocks of colours of the shows to guess
+let imgDora;
+
+
 //array of images to use for the guessing game
 let movieBlocks = [
 
@@ -37,14 +41,11 @@ const speechRecognizer = new p5.SpeechRec();
 
 function preload() {
 
-    imgLevelOne = loadImage('assets/images/dora.png'); //level one image
+    imgDora = loadImage('assets/images/dora.png');
 
 }
 
 
-/**
-Description of setup
-*/
 function setup() {
 
     createCanvas(800, 800);
@@ -56,16 +57,16 @@ function setup() {
 }
 
 
-/**
-Description of draw()
-*/
 function draw() {
 
     background(125, 51, 181);
     
     //mainMenu(); //calling the mainmenu function to start the game when key is down
 
+    
     theAnswer();
+    image(imgDora, 50, 50);
+    
 
     /*if (state === `start`) { //clicking space to start screen
         start();
@@ -125,7 +126,9 @@ function theAnswer() {
 
 function handleVoiceInput() {
 
+    
     let guessedMovie = `What show is this???`;
+
 
     if (speechRecognizer.resultValue) {
 
@@ -136,10 +139,12 @@ function handleVoiceInput() {
     }
     //lower case
     currentAnswer = guessedMovie;
+    
+
 }
 
 function nextShow() {
-
+    
     currentAnswer = '';
     nowShow = random(movieBlocks); //go back to the image array and get another show to guess
 }
