@@ -13,8 +13,26 @@ Process: (start with 5 levels of difficulty)
 4. Change the screen when guessed right
 
 **/
+//array of images to use for the guessing game
+let movieBlocks = [
 
-let imgLevelOne; //level one show to guess image
+    "dora",
+    "cat"
+
+];
+
+const question = 2000;
+
+let currentAnswer = 'Click Enter to Begin';
+
+//the show being currently displayed 
+let nowShow = ``;
+
+//The speech synthesizer
+const speechSynthesizer = new p5.Speech();
+
+//To recongnize the voice coming through!
+const speechRecognizer = new p5.SpeechRec();
 
 
 function preload() {
@@ -29,7 +47,11 @@ Description of setup
 */
 function setup() {
 
-    createCanvas(800,800);
+    createCanvas(800, 800);
+
+    speechRecognizer.continuous = true;
+    speechRecognizer.onResult = handleVoiceInput;
+    speechRecognizer.start();
 
 }
 
@@ -40,15 +62,18 @@ Description of draw()
 function draw() {
 
     background(125, 51, 181);
-    mainMenu(); //calling the mainmenu function to start the game when key is down
+    
+    //mainMenu(); //calling the mainmenu function to start the game when key is down
 
-    if (state === `start`) { //clicking space to start screen
+    theAnswer();
+
+    /*if (state === `start`) { //clicking space to start screen
         start();
     } else if (state === `simulation`) {
         simulation();
-    } else if (state === `you died`) {
-        youDied();
-    }
+    } else if (state === `you won`) {
+        youWon();
+    } */
 
 }
 
@@ -76,27 +101,55 @@ function start() {
 }
 
 //the actual guessing show game time 
+//five level difficulty
 function simulation() {
 
-    rects.draw(); //calling all the functions in the draw function of the class Rectangle
-    rects2.draw();
-    rects3.draw();
-    kirb.draw();
-
-    //displaying the counter in top corner
-    push();
-    textSize(40);
-    textFont('Georgia');
-    fill(224, 188, 4)
-    text('Score: ' + Rectangle.points, 35, 50);
-    pop();
 
 
-    if (!kirb.alive) {
-        state = 'you died'
+}
+
+
+
+//detecting and displaying the correct answer
+function theAnswer() {
+
+    if (currentAnswer === nowShow) {
+        background(255, 0, 234);
+
+    } else {
+        background(255,0,0)
     }
+    text(currentAnswer, width/2, height/2);
 
+}
 
+function handleVoiceInput() {
+
+    let guessedMovie = `What show is this???`;
+
+    if (speechRecognizer.resultValue) {
+
+        let parts = speechRecognizer.resultString.toLowerCase().split(`it is `);
+        if (parts.length > 1) {
+            guessedMovie = parts[1];
+        }
+    }
+    //lower case
+    currentAnswer = guessedMovie;
+}
+
+function nextShow() {
+
+    currentAnswer = '';
+    nowShow = random(movieBlocks); //go back to the image array and get another show to guess
+}
+
+function keyPressed(){
+
+    if (keyIsDown(13)) { //if enter is down the user is ready for the next blocks of colours to guess the next show
+        nextShow();
+
+    }
 }
 
 function mainMenu() {
