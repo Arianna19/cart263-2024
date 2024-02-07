@@ -20,11 +20,16 @@ let imgDora;
 //array of images to use for the guessing game
 let movieBlocks = [
 
-    "dora",
-    "cat"
+    "dora the explorer",
+    "the simpsons",
+    "the powerpuff girls",
+    "sponge bob square pants",
+    "inside out",
+    "adventure time"
 
 ];
 
+//array to go through the images of the different shows listed
 let img = [];
 let index = 0;
 let imagePosition;
@@ -48,6 +53,11 @@ function preload() {
 
     img[0] = loadImage('assets/images/dora.png');
     img[1] = loadImage('assets/images/simpsons.png');
+    img[2] = loadImage('assets/images/powerpuff.png');
+    img[3] = loadImage('assets/images/spongebob.png');
+    img[4] = loadImage('assets/images/insideout.png');
+    img[5] = loadImage('assets/images/adventuretime.png');
+
 
 
 }
@@ -66,7 +76,6 @@ function draw() {
     background(125, 51, 181);
 
     mainMenu(); //calling the mainmenu function to start the game when key is down
-
 
     if (state === `start`) { //clicking space to start screen
         start();
@@ -100,12 +109,21 @@ function start() {
 
 //the actual guessing show game time 
 //five level difficulty
+
+let counter = 5;
+
 function simulation() {
 
-    theAnswer();
+    if (counter <= 5 || state === `simulation`) {
+        theAnswer();
 
-    image(img[index], 20, 20, width / 2, height / 2);
+        image(img[index], 150, 150, 500, height / 2);
+
+    } else {
+        state === `you won`;
+    }
 }
+
 
 //detecting and displaying the correct answer
 function theAnswer() {
@@ -116,7 +134,7 @@ function theAnswer() {
     } else {
         background(255, 0, 0)
     }
-    text(currentAnswer, width / 2, height / 2);
+    text(currentAnswer, 800, 800);
 }
 
 function handleVoiceInput() {
@@ -160,6 +178,18 @@ function keyPressed() {
             index = index - img.length;
         }
     }
+    counter = + 1;
+}
+
+function youWon() {
+
+    push();
+    textSize(50);
+    fill(50, 168, 82);
+    textAlign(CENTER, CENTER);
+    textFont('Georgia');
+    text('You Guessed Everything!', width / 2, height / 2);
+    pop();
 }
 
 function mainMenu() {
@@ -167,5 +197,12 @@ function mainMenu() {
     //how the player starts
     if (keyIsDown(32) && state === 'start') { //if space is down while on the start screen make the game go in the guessing part 
         state = 'simulation';
+    }
+}
+
+function gameWon() {
+    
+    if (counter = 5) {
+        state = `you won`;
     }
 }
