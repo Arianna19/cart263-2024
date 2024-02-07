@@ -13,14 +13,11 @@ Process: (start with 5 levels of difficulty)
 4. Change the screen when guessed right
 
 **/
-//image names for the blocks of colours of the shows to guess
-let imgDora;
-
 
 //array of images to use for the guessing game
 let movieBlocks = [
 
-    "dora the explorer",
+    "Dora",
     "the simpsons",
     "the powerpuff girls",
     "sponge bob square pants",
@@ -35,7 +32,7 @@ let index = 0;
 let imagePosition;
 
 
-let currentAnswer = 'Click Enter to Begin';
+let currentAnswer = 'Click to Begin';
 
 //the show being currently displayed 
 let nowShow = ``;
@@ -51,14 +48,13 @@ const question = 2000;
 
 function preload() {
 
+//index of images of what the user will guess (colour blocks)
     img[0] = loadImage('assets/images/dora.png');
     img[1] = loadImage('assets/images/simpsons.png');
     img[2] = loadImage('assets/images/powerpuff.png');
     img[3] = loadImage('assets/images/spongebob.png');
     img[4] = loadImage('assets/images/insideout.png');
     img[5] = loadImage('assets/images/adventuretime.png');
-
-
 
 }
 
@@ -69,6 +65,8 @@ function setup() {
     speechRecognizer.continuous = true;
     speechRecognizer.onResult = handleVoiceInput;
     speechRecognizer.start();
+
+    
 }
 
 function draw() {
@@ -76,7 +74,7 @@ function draw() {
     background(125, 51, 181);
 
     mainMenu(); //calling the mainmenu function to start the game when key is down
-
+    
     if (state === `start`) { //clicking space to start screen
         start();
     } else if (state === `simulation`) {
@@ -108,14 +106,14 @@ function start() {
 }
 
 //the actual guessing show game time 
-//five level difficulty
+//six level difficulty
 
 let counter = 5;
 
 function simulation() {
 
     if (counter <= 5 || state === `simulation`) {
-        theAnswer();
+        //theAnswer();
 
         image(img[index], 150, 150, 500, height / 2);
 
@@ -125,20 +123,14 @@ function simulation() {
 }
 
 
-//detecting and displaying the correct answer
-function theAnswer() {
-
-    if (currentAnswer === nowShow) {
-        background(255, 0, 234);
-
-    } else {
-        background(255, 0, 0)
-    }
-    text(currentAnswer, 800, 800);
-}
-
 function handleVoiceInput() {
 
+    push();
+    textSize(150);
+    textAlign(CENTER, BOTTOM);
+    textStyle(BOLD);
+    textStyle("Georgia");
+    pop();
 
     let guessedMovie = `What show is this???`;
 
@@ -148,16 +140,40 @@ function handleVoiceInput() {
         let parts = speechRecognizer.resultString.toLowerCase().split(`it is `);
         if (parts.length > 1) {
             guessedMovie = parts[1];
+            console.log(speechRecognizer.resultString);
+            
         }
     }
     //lower case
     currentAnswer = guessedMovie;
 }
 
+//detecting and displaying the correct answer
+function theAnswer() {
+
+    push();
+    textSize(150);
+    textAlign(CENTER, BOTTOM);
+    textStyle(BOLD);
+    textStyle("Georgia");
+    pop();
+    
+
+    if (currentAnswer === nowShow) {
+        background(255, 0, 234); //PINK IF GUESSED CORRECTLY
+        console.log("right answer ")
+
+    } else if (currentAnswer ==! nowShow) {
+        background(255, 0, 0); //RED IF WRONG
+        console.log("wrong answer")
+    }
+    text(currentAnswer, 800, 800);
+}
+
 function nextShow() {
 
     currentAnswer = '';
-    nowShow = random(movieBlocks); //go back to the image array and get another show to guess
+    
 }
 
 function nextImage() {
