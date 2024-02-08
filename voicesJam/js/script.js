@@ -6,7 +6,7 @@ This simulation is basically very simple since it's my first time using audio/vo
 The goal: Guess the movie/series based off of the colour blocks being shown 
 Speech aspect: The user has to vocally say the movie and the computer will wait until the right answer is said 
 
-Process: (start with 5 levels of difficulty)
+Process: (start with 6 levels of difficulty)
 1. Create an array of images which will be the colour blocks 
 2. Create a detection function of audio 
 3. Function that will notice the right answer
@@ -15,7 +15,7 @@ Process: (start with 5 levels of difficulty)
 **/
 //different background images depending on the state user is in
 let bgStart;
-let bgWin; 
+let bgWin;
 
 //array of images to use for the guessing game
 let movieBlocks = [
@@ -51,7 +51,7 @@ const question = 2000;
 
 function preload() {
 
-//index of images of what the user will guess (colour blocks)
+    //index of images of what the user will guess (colour blocks)
     img[0] = loadImage('assets/images/dora.png');
     img[1] = loadImage('assets/images/simpsons.png');
     img[2] = loadImage('assets/images/powerpuff.png');
@@ -70,7 +70,7 @@ function setup() {
 
     speechRecognizer.continuous = true; //listens all the time
     speechRecognizer.onResult = handleVoiceInput; //call this function
-    speechRecognizer.start(); 
+    speechRecognizer.start();
 
 }
 
@@ -116,7 +116,7 @@ function handleVoiceInput() {
         if (parts.length > 1) {
             guessedMovie = parts[1].trim();
             console.log(speechRecognizer.resultString);
-           
+
         }
     }
     //lower case
@@ -132,16 +132,16 @@ function theAnswer() {
     textAlign(CENTER, BOTTOM);
     textStyle(BOLD);
     textStyle("Georgia");
-    
+
     pop();
     console.log("pls work");
     console.log(currentAnswer);
     console.log(nowShow)
-    
+
     if (currentAnswer == nowShow) {
         background(23, 163, 60); //GREEN IF GUESSED CORRECTLY
         console.log("right answer")
-       
+
     } else {
         background(255, 0, 0); //RED IF WRONG
         console.log("wrong answer")
