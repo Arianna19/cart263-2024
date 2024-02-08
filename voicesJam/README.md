@@ -2,5 +2,12 @@
 
 Author: Arianna Narita 
 
-Basically a super simple game since it's my first time tampering with speech in code. The concept is to guess the show just my seeing colour blocks of certain characters. The way this simulation uses the speech concepts is that it asks the user to say the show to the computer. The program compares if what was said matches the answer given in the code and displays if the answer is right or wrong. In total there are 6 shows to guess!
+This simulation is basically very simple since it's my first time using audio/voice in a project.
+The goal: Guess the movie/series/show based off of the colour blocks being shown 
+Speech aspect: The user has to vocally say the movie and the computer will wait until the right answer is said by comparing it with the asnwer provided in the code.
 
+Process that I took: (start with 6 levels of difficulty) //little list I created to help me
+1. Create an array of images which will be the colour blocks 
+2. Create a detection function of audio 
+3. Function that will notice the right answer
+4. Change the screen when guessed right
