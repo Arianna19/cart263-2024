@@ -10,10 +10,10 @@ let bgWin;
 //array of images to use for the guessing game
 let movieBlocks = [
 
-    "dora",
+    "dora the explorer",
     "the simpsons",
     "the powerpuff girls",
-    "sponge bob square pants",
+    "spongebob",
     "inside out",
     "adventure time"
 
@@ -21,11 +21,14 @@ let movieBlocks = [
 
 //array to go through the images of the different shows listed
 let img = [];
-let index = 6;
+let index = 0;
 let imagePosition;
 
 //the thing that is being shown at the moment 
 let currentAnswer = `What show is this???`;
+
+//get program to say the question once
+let sayQuestion = false; 
 
 //the show being currently displayed that needs to be guessed
 let nowShow = ``;
@@ -58,6 +61,9 @@ function setup() {
 
     createCanvas(800, 800);
 
+    speechSynthesizer.setPitch(1.4);
+    speechSynthesizer.setVoice(`Microsoft Haruka - Japanese (Japan)`);
+
     speechRecognizer.continuous = true; //listens all the time
     speechRecognizer.onResult = handleVoiceInput; //call this function
     speechRecognizer.start();
@@ -86,10 +92,11 @@ function draw() {
 function simulation() {
 
     if (index < 6 && state === `simulation`) {
-        theAnswer();
 
+        theAnswer();
         image(img[index], 150, 150, 500, height / 2);
         nowShow = movieBlocks[index];
+        //hintButton();
 
     } else {
         state = `you won`;
@@ -111,31 +118,114 @@ function handleVoiceInput() {
     }
     //lower case
     currentAnswer = guessedMovie;
-    text(guessedMovie, 200, 100);
+    //    text(guessedMovie, 200, 100);
 }
 
 //detecting and displaying the correct answer
 function theAnswer() {
 
-    push();
-    textSize(150);
-    textAlign(CENTER, BOTTOM);
-    textStyle(BOLD);
-    textStyle("Georgia");
-
-    pop();
     console.log("pls work");
     console.log(currentAnswer);
     console.log(nowShow)
 
     if (currentAnswer == nowShow) {
         background(23, 163, 60); //GREEN IF GUESSED CORRECTLY
+        push();
+        textSize(45);
+        textAlign(CENTER, CENTER)
+        textStyle("Georgia");
+        text(speechRecognizer.resultString, width / 2, 50); //display the right answer
+        pop();
+
+        push();
+        textSize(25);
+        fill(255, 217, 0);
+        textAlign(CENTER)
+        textFont('Georgia');
+        text('Click Enter for the next show', width / 2, 650);
+        pop();
+
+        push();
+        textSize(15);
+        fill(`black`);
+        textAlign(CENTER)
+        textFont('Georgia')
+        text('Before Haruka drives you insane...', width / 2, 675);
+        pop();
+
+        push();
+        textSize(30);
+        fill(255, 217, 0);
+        textAlign(CENTER)
+        textFont('Georgia');
+        text('AMAZING YOU GOT IT!!! ᕙ(^▿^-ᕙ)', width /2, 620)
+        //speechSynthesizer.speak('AMAZING YOU GOT IT!!!');
+        pop();
+
+        push();
+        textSize(30);
+        fill(255, 217, 0);
+        textAlign(CENTER)
+        textFont('Georgia');
+        text('💪 (`▿´) 👊', 70, 350);
+        text('💪 (`▿´) 👊', 740, 350);
+        text('(͠≖ ͜ʖ͠≖)👌', 70, height/2);
+        text('(͠≖ ͜ʖ͠≖)👌', 740, height/2);
+        pop();
+
         console.log("right answer")
 
     } else {
         background(255, 0, 0); //RED IF WRONG
+        push();
+        textSize(45);
+        textAlign(CENTER, CENTER)
+        textStyle("Georgia");
+        text(speechRecognizer.resultString, width / 2, 50); //display the wrong answer
+        pop();
         console.log("wrong answer")
+        hintButton();
+
+        push();
+        textSize(30);
+        fill(255, 217, 0);
+        textAlign(CENTER)
+        textFont('Georgia');
+        text('What is this show?', width /2, 620)
+        speechSynthesizer.speak(' ');
+        pop();
     }
+}
+
+function sayHint() {
+
+
+
+}
+
+//if h key is pressed hint is displayed
+function hintButton() {
+
+
+
+    push();
+    textSize(25);
+    fill(255, 217, 0);
+    textAlign(CENTER)
+    textFont('Georgia');
+    text('Need a hint? ( ͡• ͜ʖ ͡•)', width / 2, 750);
+    pop();
+
+    push();
+    textSize(25);
+    fill(255, 217, 0);
+    textAlign(CENTER, CENTER)
+    textFont('Georgia');
+    text('Click "h"', width / 2, 780);
+    pop();
+
+   
+
 }
 
 function nextShow() {
@@ -150,7 +240,7 @@ function nextImage() {
 //click enter for the next show to be displayed
 function keyPressed() {
 
-    if (keyIsDown(13) && index < 7) { //if enter is down the user is ready for the next blocks of colours to guess the next show
+    if (keyIsDown(13) && index < 7 && currentAnswer == nowShow) { //if enter is down the user is ready for the next blocks of colours to guess the next show
         index = index + 1;
     }
 }
@@ -206,3 +296,4 @@ function mainMenu() {
         state = 'simulation';
     }
 }
+

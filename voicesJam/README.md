@@ -11,3 +11,13 @@ Process that I took: (start with 6 levels of difficulty) //little list I created
 2. Create a detection function of audio 
 3. Function that will notice the right answer
 4. Change the screen when guessed right
+
+
+Next: 
+
+- Hint function (need a hint, too hard?) -> get the computer to say this maybe?????
+- Get the computer to talk back to user 
+- display what user said 
+- display instructions
+- make it prettier 
+- background music? 
