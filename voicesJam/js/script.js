@@ -7,7 +7,7 @@ Arianna Narita
 let bgStart;
 let bgWin;
 
-//array of images to use for the guessing game
+//array of images to use for the guessing game and what the user has to say to get the answer right
 let movieBlocks = [
 
     "dora the explorer",
@@ -19,10 +19,23 @@ let movieBlocks = [
 
 ];
 
+//array of hints to give user if h is pressed
+let hintList = [
+    "she explores the world with her monkey", //dora the explorer hint
+    "a famous yellow family starting with S", //simpsons hint
+    "Blossom, Buttercup and Bubbles are the...", //powerpuff girls hint 
+    "his best friend is a starfish", //spongebob hint
+    "a disney movie about emotions", //inside out hint
+    "same show as Princess Bubblegum" //adventure time hint
+];
+
 //array to go through the images of the different shows listed
 let img = [];
 let index = 0;
 let imagePosition;
+
+//array to go through the list of the hints
+let currentHint = 0;
 
 //the thing that is being shown at the moment 
 let currentAnswer = `What show is this???`;
@@ -96,7 +109,8 @@ function simulation() {
         theAnswer();
         image(img[index], 150, 150, 500, height / 2);
         nowShow = movieBlocks[index];
-        //hintButton();
+        hintButton();
+        sayHint();
 
     } else {
         state = `you won`;
@@ -118,13 +132,11 @@ function handleVoiceInput() {
     }
     //lower case
     currentAnswer = guessedMovie;
-    //    text(guessedMovie, 200, 100);
 }
 
 //detecting and displaying the correct answer
 function theAnswer() {
 
-    console.log("pls work");
     console.log(currentAnswer);
     console.log(nowShow)
 
@@ -176,8 +188,6 @@ function theAnswer() {
         text('(͠≖ ͜ʖ͠≖)👌', 740, height / 2);
         pop();
 
-        console.log("right answer")
-
     } else {
         background(255, 0, 0); //RED IF WRONG
         push();
@@ -186,7 +196,6 @@ function theAnswer() {
         textStyle("Georgia");
         text(speechRecognizer.resultString, width / 2, 50); //display the wrong answer
         pop();
-        console.log("wrong answer")
         hintButton();
 
         push();
@@ -194,7 +203,7 @@ function theAnswer() {
         fill(255, 217, 0);
         textAlign(CENTER)
         textFont('Georgia');
-        text('What is this show?', width / 2, 50)
+        text('What is this show?', width / 2, 100);
         speechSynthesizer.speak(' '); //the way I make haruka stop talking for the next show to guess
         pop();
 
@@ -204,7 +213,7 @@ function theAnswer() {
         textAlign(CENTER)
         textStyle(BOLD);
         textFont('Georgia');
-        text("It's...", width / 2, 100)
+        text("It's...", width / 2, 140)
         speechSynthesizer.speak(' ');
         pop();
 
@@ -225,10 +234,20 @@ function theAnswer() {
 //if h key is pressed give the user one hint and the computer will say it
 function sayHint() {
 
+    let dialogueHint = hintList[currentHint]
+
     if (keyIsDown(72) && currentAnswer != nowShow) { //if enter is down the user is ready for the next blocks of colours to guess the next show
 
+        currentHint = currentHint + 1;
+        console.log('hint line')
+        speechSynthesizer.speak(dialogueHint);
+
+        if (currentHint === hintList.lenght) {
+            currentHint = hintList.length - 1;
+        }
 
     }
+
 }
 
 //the way hint instruction is displayed on screen
