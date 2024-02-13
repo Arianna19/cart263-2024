@@ -13,4 +13,4 @@ Process that I took: (start with 6 levels of difficulty) //little list I created
 4. Change the screen when guessed right
 5. Figure out a hint function for the user
 
-
+(6). Maybe just MAYBE if I have enough brain cells create a give up function 
