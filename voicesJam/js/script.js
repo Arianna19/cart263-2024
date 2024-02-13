@@ -28,7 +28,7 @@ let imagePosition;
 let currentAnswer = `What show is this???`;
 
 //get program to say the question once
-let sayQuestion = false; 
+let sayQuestion = false;
 
 //the show being currently displayed that needs to be guessed
 let nowShow = ``;
@@ -137,6 +137,7 @@ function theAnswer() {
         text(speechRecognizer.resultString, width / 2, 50); //display the right answer
         pop();
 
+        ///bunch of pretty text things for a fun looking game///
         push();
         textSize(25);
         fill(255, 217, 0);
@@ -148,29 +149,31 @@ function theAnswer() {
         push();
         textSize(15);
         fill(`black`);
-        textAlign(CENTER)
-        textFont('Georgia')
+        textAlign(CENTER);
+        textFont('Georgia');
         text('Before Haruka drives you insane...', width / 2, 675);
         pop();
 
         push();
         textSize(30);
         fill(255, 217, 0);
-        textAlign(CENTER)
+        textAlign(CENTER);
+        textStyle(BOLD);
         textFont('Georgia');
-        text('AMAZING YOU GOT IT!!! ᕙ(^▿^-ᕙ)', width /2, 620)
-        //speechSynthesizer.speak('AMAZING YOU GOT IT!!!');
+        text('AMAZING YOU GOT IT!!! ᕙ(^▿^-ᕙ)', width / 2, 620)
+        //speechSynthesizer.speak('AMAZING YOU GOT IT!!!'); //lady haruka driving the user insane by making them understand they got it
         pop();
 
         push();
         textSize(30);
         fill(255, 217, 0);
-        textAlign(CENTER)
+        textAlign(CENTER);
+        textStyle(BOLD);
         textFont('Georgia');
         text('💪 (`▿´) 👊', 70, 350);
         text('💪 (`▿´) 👊', 740, 350);
-        text('(͠≖ ͜ʖ͠≖)👌', 70, height/2);
-        text('(͠≖ ͜ʖ͠≖)👌', 740, height/2);
+        text('(͠≖ ͜ʖ͠≖)👌', 70, height / 2);
+        text('(͠≖ ͜ʖ͠≖)👌', 740, height / 2);
         pop();
 
         console.log("right answer")
@@ -191,22 +194,45 @@ function theAnswer() {
         fill(255, 217, 0);
         textAlign(CENTER)
         textFont('Georgia');
-        text('What is this show?', width /2, 620)
+        text('What is this show?', width / 2, 50)
+        speechSynthesizer.speak(' '); //the way I make haruka stop talking for the next show to guess
+        pop();
+
+        push();
+        textSize(40);
+        fill(255, 217, 0);
+        textAlign(CENTER)
+        textStyle(BOLD);
+        textFont('Georgia');
+        text("It's...", width / 2, 100)
         speechSynthesizer.speak(' ');
+        pop();
+
+        ///bunch of pretty text things for a fun looking game///
+        push();
+        textSize(30);
+        fill(255, 217, 0);
+        textAlign(CENTER);
+        textStyle(BOLD);
+        textFont('Georgia');
+        text('( ˘︹˘ )', 70, 180);
+        text('(ㆆ_ㆆ)', 70, 550);
+        text('O﹏o', 730, height / 2);
         pop();
     }
 }
 
+//if h key is pressed give the user one hint and the computer will say it
 function sayHint() {
 
+    if (keyIsDown(72) && currentAnswer != nowShow) { //if enter is down the user is ready for the next blocks of colours to guess the next show
 
 
+    }
 }
 
-//if h key is pressed hint is displayed
+//the way hint instruction is displayed on screen
 function hintButton() {
-
-
 
     push();
     textSize(25);
@@ -223,9 +249,6 @@ function hintButton() {
     textFont('Georgia');
     text('Click "h"', width / 2, 780);
     pop();
-
-   
-
 }
 
 function nextShow() {
@@ -233,8 +256,9 @@ function nextShow() {
     currentAnswer = '';
 }
 
+//change to the next image in the index I gave to the program
 function nextImage() {
-    index = index + 1; //change to the next image in the index I gave to the program
+    index = index + 1;
 }
 
 //click enter for the next show to be displayed
