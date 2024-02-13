@@ -47,7 +47,7 @@ let sayQuestion = false;
 let nowShow = ``;
 
 //The speech synthesizer
-const speechSynthesizer = new p5.Speech();
+const speechSynthesizer = new p5.Speech(); 
 
 //To recongnize the voice coming through!
 const speechRecognizer = new p5.SpeechRec();
@@ -173,7 +173,7 @@ function theAnswer() {
         textStyle(BOLD);
         textFont('Georgia');
         text('AMAZING YOU GOT IT!!! ᕙ(^▿^-ᕙ)', width / 2, 620)
-        //speechSynthesizer.speak('AMAZING YOU GOT IT!!!'); //lady haruka driving the user insane by making them understand they got it
+        speechSynthesizer.speak('AMAZING YOU GOT IT!!!'); //lady haruka driving the user insane by making them understand they got it
         pop();
 
         push();
@@ -235,20 +235,21 @@ function theAnswer() {
 function sayHint() {
 
     let dialogueHint = hintList[currentHint]
+    console.log(currentHint)
 
     if (keyIsDown(72) && currentAnswer != nowShow) { //if enter is down the user is ready for the next blocks of colours to guess the next show
-
-        currentHint = currentHint + 1;
         console.log('hint line')
         speechSynthesizer.speak(dialogueHint);
-
-        if (currentHint === hintList.lenght) {
-            currentHint = hintList.length - 1;
-        }
-
+        
+    }
+    
+    else if (keyIsDown(13)) { //if user presses enter for the next level the hint changes and goes +1 in the list
+        currentHint =+ 1;
+        console.log(currentHint)
     }
 
 }
+
 
 //the way hint instruction is displayed on screen
 function hintButton() {
