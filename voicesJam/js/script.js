@@ -23,7 +23,7 @@ let movieBlocks = [
 let hintList = [
     "she explores the world with her monkey", //dora the explorer hint
     "a famous yellow family starting with S", //simpsons hint
-    "Blossom, Buttercup and Bubbles are the...", //powerpuff girls hint 
+    "Blossom, Buttercup and Bubbles are the what?", //powerpuff girls hint 
     "his best friend is a starfish", //spongebob hint
     "a disney movie about emotions", //inside out hint
     "same show as Princess Bubblegum" //adventure time hint
@@ -34,20 +34,16 @@ let img = [];
 let index = 0;
 let imagePosition;
 
-//array to go through the list of the hints
-let currentHint = 0;
+
 
 //the thing that is being shown at the moment 
 let currentAnswer = `What show is this???`;
-
-//get program to say the question once
-let sayQuestion = false;
 
 //the show being currently displayed that needs to be guessed
 let nowShow = ``;
 
 //The speech synthesizer
-const speechSynthesizer = new p5.Speech(); 
+const speechSynthesizer = new p5.Speech();
 
 //To recongnize the voice coming through!
 const speechRecognizer = new p5.SpeechRec();
@@ -88,6 +84,7 @@ function draw() {
     background(bgStart, 800, 800);
 
     mainMenu(); //calling the mainmenu function to start the game when key is down
+    //restart();
 
     if (state === `start`) { //clicking space to start screen
         start();
@@ -231,23 +228,20 @@ function theAnswer() {
     }
 }
 
+//array to go through the list of the hints
+let currentHint = 0;
+
 //if h key is pressed give the user one hint and the computer will say it
 function sayHint() {
 
-    let dialogueHint = hintList[currentHint]
+    let dialogueHint = hintList[currentHint];
     console.log(currentHint)
 
     if (keyIsDown(72) && currentAnswer != nowShow) { //if enter is down the user is ready for the next blocks of colours to guess the next show
         console.log('hint line')
         speechSynthesizer.speak(dialogueHint);
-        
-    }
-    
-    else if (keyIsDown(13)) { //if user presses enter for the next level the hint changes and goes +1 in the list
-        currentHint =+ 1;
-        console.log(currentHint)
-    }
 
+    }
 }
 
 
@@ -269,6 +263,7 @@ function hintButton() {
     textFont('Georgia');
     text('Click "h"', width / 2, 780);
     pop();
+
 }
 
 function nextShow() {
@@ -286,6 +281,7 @@ function keyPressed() {
 
     if (keyIsDown(13) && index < 7 && currentAnswer == nowShow) { //if enter is down the user is ready for the next blocks of colours to guess the next show
         index = index + 1;
+        currentHint++; //go to the next hint if the image changes
     }
 }
 
@@ -324,13 +320,6 @@ function youWon() {
     text('You Guessed Everything!', width / 2, height / 2);
     text('ᕙ(`▿´)ᕗ ᕙ(`▿´)ᕗ', width / 2, 325);
     pop();
-
-    push();
-    textSize(20);
-    fill(51, 255, 0);
-    textAlign(CENTER, CENTER);
-    text('~click enter to play again~', width / 2, 450);
-    pop();
 }
 
 function mainMenu() {
@@ -340,4 +329,3 @@ function mainMenu() {
         state = 'simulation';
     }
 }
-
