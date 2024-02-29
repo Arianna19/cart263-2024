@@ -11,24 +11,43 @@ See if the computer is able to accurately guess whats happening while user is dr
 
 "use strict";
 
+//creating an erase all button variable 
+//clears all previous strokes 
+let eraseAll;
+
+let backgroundCanvas;
 
 
 function preload() {
 
+
+
 }
 
-
-/**
-Description of setup
-*/
 function setup() {
 
+//setting up the background where user can draw
+    backgroundCanvas = createCanvas(400, 400); 
+    background('white');
+
+//setting up the button 
+    eraseAll = createButton('clear');
+//if mouse is down on the button erase everything previously drawn by calling eraseCanvas function
+    eraseAll.mousePressed(eraseCanvas);
+
 }
 
-
-/**
-Description of draw()
-*/
 function draw() {
+    if (mouseIsPressed) {
+        strokeWeight(10);
+        line(mouseX, mouseY, pmouseX, pmouseY);
+    }
 
+}
+
+//funtion that allows everything to be erased when button is clicked
+function eraseCanvas() {
+
+//reset everything to just being white
+    backgroundCanvas('white');
 }
