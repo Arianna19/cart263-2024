@@ -1,3 +1,5 @@
-# Template p5 project
+# Ai Jam Project
 
-This is the README file for the entire project. For more official projects you should write information here about the nature of the project, your name, any special explanations of how the project works, etc.
+--EXTENSION GIVEN UNTIL: SATURDAY MARCH 2ND--
+
+
