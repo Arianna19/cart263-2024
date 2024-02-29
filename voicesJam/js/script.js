@@ -319,6 +319,7 @@ function youWon() {
     textFont('Georgia');
     text('You Guessed Everything!', width / 2, height / 2);
     text('ᕙ(`▿´)ᕗ ᕙ(`▿´)ᕗ', width / 2, 325);
+    speechSynthesizer.speak(' '); //the way I make haruka stop talking for the next show to guess
     pop();
 }
 
