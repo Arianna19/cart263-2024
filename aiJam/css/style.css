@@ -18,3 +18,31 @@ body {
   height: 100vh; /* Body is the height of the viewport */
   overflow: hidden; /* Hide anything that goes off the window size */
 }
+
+#wrapper {
+  border: 1px solid blue;
+  text-align: center;
+}
+.container {
+  display: flex;
+}
+
+
+.block {
+  flex: 1;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.block:first-child {
+  border-right: none;
+}
+
+.block:last-child {
+  border-left: none;
+}
+
+.block ul {
+  margin-top: 0;
+  padding-left: 20px;
+}
