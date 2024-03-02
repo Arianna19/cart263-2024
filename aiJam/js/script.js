@@ -38,6 +38,9 @@ let strokePath;
 
 let animal = [];
 let select = "cat";
+
+let loadingImages = true;
+
 // For when SketchRNN is fixed
 function preload() {
   // See a list of all supported models: https://github.com/ml5js/ml5-library/blob/master/src/SketchRNN/models.js
@@ -58,6 +61,7 @@ function preload() {
   animal["flamingo"] = (ml5.sketchRNN('flamingo'));
   animal["penguin"] = (ml5.sketchRNN('penguin'));
   animal["parrot"] = (ml5.sketchRNN('parrot'));
+  animal["squirrel"] = (ml5.sketchRNN('squirrel'));
   animal["pig"] = (ml5.sketchRNN('pig', modelReady));
 
 
@@ -80,8 +84,10 @@ function handleVoiceInput() {
     }
   }
   //lower case
-  if (guessedanimal in animal)
+  if (guessedanimal in animal) {
     select = guessedanimal;
+    startDrawing()
+  }
 }
 
 function setup() {
@@ -89,7 +95,7 @@ function setup() {
   background(220);
 
   // Button to reset drawing
-  let button = createButton('draw next');
+  let button = createButton('DRAW AGAIN');
   button.mousePressed(startDrawing);
 
 
@@ -98,11 +104,21 @@ function setup() {
 function modelReady() {
   console.log('model loaded');
   startDrawing();
+  loadingImages = false;
 }
 
 // Reset the drawing
 function startDrawing() {
+
+  //text to show user what the computer is generating 
   background(220);
+  push();
+  textSize(35);
+  fill(164, 39, 186)
+  textFont('Georgia');
+  text('Drawing a ' + select, 25, 50);
+  pop();
+
   // Start in the middle
   x = width / 2;
   y = height / 2;
@@ -112,14 +128,18 @@ function startDrawing() {
 }
 
 function draw() {
+
   // If something new to draw
   if (strokePath) {
     // If the pen is down, draw a line
     if (previous_pen == 'down') {
+      push();
       stroke(0);
       strokeWeight(3.0);
       line(x, y, x + strokePath.dx, y + strokePath.dy);
+      pop();
     }
+
     // Move the pen
     x += strokePath.dx;
     y += strokePath.dy;
@@ -132,6 +152,16 @@ function draw() {
       animal[select].generate(gotStroke);
     }
   }
+
+  if (loadingImages) {
+    push();
+    textSize(25);
+    textFont('Georgia');
+    text('Animals loading please wait...', 320 - 150, 240);
+    pop();
+  }
+
+
 }
 
 // A new stroke path

@@ -45,4 +45,6 @@ body {
 .block ul {
   margin-top: 0;
   padding-left: 20px;
+  list-style-type: none; /* Remove bullet points */
+  text-align: center; /* Align list items to the left */
 }
