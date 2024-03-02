@@ -13,4 +13,4 @@ Enjoying how ml5.js draws certain animals from their library
 Having a program that interacts immediately with the user 
 A mini drawing chatgbt but with audio!?
 
-
+HTML AND CSS ARE used to display the lists of the animals
