@@ -2,8 +2,13 @@
 Game Engine Jam 
 Arianna
 
-This is a template. You must fill in the title,
-author, and this description to match your project!
+Making first project and last minute project using phaser 3
+Hoping its something somewhat presentable 
+
+Overall idea:
+
+
+
 */
 
 "use strict";
