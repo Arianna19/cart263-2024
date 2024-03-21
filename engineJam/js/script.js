@@ -1,11 +1,42 @@
 /**
-Title of Project
-Author Name
+Game Engine Jam 
+Arianna
 
-This is a template. You must fill in the title,
-author, and this description to match your project!
+Making first project and last minute project using phaser 3
+Hoping its something somewhat presentable 
+
+Overall idea:
+
+
+
 */
 
 "use strict";
 
-// Code goes here
+
+function preload() {
+
+}
+
+
+
+function setup() {
+
+}
+
+
+
+function draw() {
+
+    
+
+    if (state === `start`) { //clicking space to start screen
+        start();
+    } else if (state === `simulation`) {
+        simulation();
+    } else if (state === `you won`) {
+        youWon();
+    }
+    else
+
+}
