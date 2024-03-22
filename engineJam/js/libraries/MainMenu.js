@@ -1,3 +1,17 @@
+/*Title: Kirby Matching gmae
+Author: Arianna Narita
+
+Trying my first ever game using Phaser 3 libraries and syntax 
+
+Overall concept: 
+1. Use a template from phaser 3 and personalize it 
+2. Create a kirby concept to personalize it and learn how phaser 3 workds in the proccess 
+3. The user has to find the matching kirbies/images amongst a bunch of other kirby images
+4. Have a fun audio aspect elements
+5. Final product is just a personalized phaser 3 game with EVERYTHING KIRBY
+
+*/
+
 "use strict";
 
 class MainMenu extends Phaser.Scene
