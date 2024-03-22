@@ -29,8 +29,8 @@ class MainGame extends Phaser.Scene
     {
         this.add.image(400, 300, 'background');
 
-        this.circle1 = this.add.circle(0, 0, 42).setStrokeStyle(3, 0xf8960e);
-        this.circle2 = this.add.circle(0, 0, 42).setStrokeStyle(3, 0x00ff00);
+        this.circle1 = this.add.circle(0, 0, 99).setStrokeStyle(3, 0xf8960e);
+        this.circle2 = this.add.circle(0, 0, 99).setStrokeStyle(3, 0x00ff00);
 
         this.circle1.setVisible(false);
         this.circle2.setVisible(false);
@@ -46,8 +46,8 @@ class MainGame extends Phaser.Scene
                 height: 4,
                 cellWidth: 198,
                 cellHeight: 198,
-                x: 0,
-                y: 0
+                x: 199,
+                y: 199
             }
         });
 

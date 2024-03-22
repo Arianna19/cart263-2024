@@ -18,7 +18,8 @@
         this.loadText.setShadow(2, 2, '#2d2d2d', 4, true, false);
 
         this.load.setPath('assets/images');
-        this.load.image([ 'background', 'logo' ]);
+        this.load.image('background', [  'kirbybg.png' ]);
+        this.load.image('logo', [  'titlemain.png' ]);
         this.load.atlas('emojs', 'spritesheet.png', 'sprites.json');
 
         //  Audio ...

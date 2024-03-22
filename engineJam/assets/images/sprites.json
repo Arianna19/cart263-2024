@@ -1,1 +1,455 @@
-{"frames":[{"filename":"kirby3","frame":{"x":935,"y":82,"w":205,"h":280},"rotated":false,"trimmed":false,"spriteSourceSize":{"x":0,"y":0,"w":205,"h":280},"sourceSize":{"w":205,"h":280}},{"filename":"kirby1","frame":{"x":475,"y":89,"w":213,"h":273},"rotated":false,"trimmed":false,"spriteSourceSize":{"x":0,"y":0,"w":213,"h":273},"sourceSize":{"w":213,"h":273}},{"filename":"kirby4","frame":{"x":1161,"y":112,"w":205,"h":250},"rotated":false,"trimmed":false,"spriteSourceSize":{"x":0,"y":0,"w":205,"h":250},"sourceSize":{"w":205,"h":250}},{"filename":"kirby2","frame":{"x":694,"y":150,"w":227,"h":212},"rotated":false,"trimmed":false,"spriteSourceSize":{"x":0,"y":0,"w":227,"h":212},"sourceSize":{"w":227,"h":212}},{"filename":"kirby7","frame":{"x":929,"y":376,"w":212,"h":250},"rotated":false,"trimmed":false,"spriteSourceSize":{"x":0,"y":0,"w":212,"h":250},"sourceSize":{"w":212,"h":250}},{"filename":"kirby6","frame":{"x":731,"y":398,"w":182,"h":228},"rotated":false,"trimmed":false,"spriteSourceSize":{"x":0,"y":0,"w":182,"h":228},"sourceSize":{"w":182,"h":228}},{"filename":"kirby8","frame":{"x":1187,"y":398,"w":182,"h":228},"rotated":false,"trimmed":false,"spriteSourceSize":{"x":0,"y":0,"w":182,"h":228},"sourceSize":{"w":182,"h":228}},{"filename":"kirby5","frame":{"x":468,"y":413,"w":228,"h":213},"rotated":false,"trimmed":false,"spriteSourceSize":{"x":0,"y":0,"w":228,"h":213},"sourceSize":{"w":228,"h":213}},{"filename":"kirby10","frame":{"x":710,"y":639,"w":205,"h":236},"rotated":false,"trimmed":false,"spriteSourceSize":{"x":0,"y":0,"w":205,"h":236},"sourceSize":{"w":205,"h":236}},{"filename":"kirby11","frame":{"x":929,"y":647,"w":227,"h":228},"rotated":false,"trimmed":false,"spriteSourceSize":{"x":0,"y":0,"w":227,"h":228},"sourceSize":{"w":227,"h":228}},{"filename":"kirby9","frame":{"x":483,"y":685,"w":205,"h":190},"rotated":false,"trimmed":false,"spriteSourceSize":{"x":0,"y":0,"w":205,"h":190},"sourceSize":{"w":205,"h":190}},{"filename":"kirby12","frame":{"x":1165,"y":685,"w":204,"h":190},"rotated":false,"trimmed":false,"spriteSourceSize":{"x":0,"y":0,"w":204,"h":190},"sourceSize":{"w":204,"h":190}},{"filename":"kirby14","frame":{"x":724,"y":896,"w":205,"h":214},"rotated":false,"trimmed":false,"spriteSourceSize":{"x":0,"y":0,"w":205,"h":214},"sourceSize":{"w":205,"h":214}},{"filename":"kirby16","frame":{"x":1172,"y":903,"w":250,"h":207},"rotated":false,"trimmed":false,"spriteSourceSize":{"x":0,"y":0,"w":250,"h":207},"sourceSize":{"w":250,"h":207}},{"filename":"kirby15","frame":{"x":931,"y":918,"w":210,"h":192},"rotated":false,"trimmed":false,"spriteSourceSize":{"x":0,"y":0,"w":210,"h":192},"sourceSize":{"w":210,"h":192}},{"filename":"kirby13","frame":{"x":505,"y":933,"w":191,"h":177},"rotated":false,"trimmed":false,"spriteSourceSize":{"x":0,"y":0,"w":191,"h":177},"sourceSize":{"w":191,"h":177}},{"filename":"sprite17","frame":{"x":1119,"y":1115,"w":39,"h":89},"rotated":false,"trimmed":false,"spriteSourceSize":{"x":0,"y":0,"w":39,"h":89},"sourceSize":{"w":39,"h":89}},{"filename":"kirby20","frame":{"x":1163,"y":1127,"w":213,"h":213},"rotated":false,"trimmed":false,"spriteSourceSize":{"x":0,"y":0,"w":213,"h":213},"sourceSize":{"w":213,"h":213}},{"filename":"kirby17","frame":{"x":505,"y":1134,"w":183,"h":206},"rotated":false,"trimmed":false,"spriteSourceSize":{"x":0,"y":0,"w":183,"h":206},"sourceSize":{"w":183,"h":206}},{"filename":"kirby18","frame":{"x":734,"y":1142,"w":198,"h":198},"rotated":false,"trimmed":false,"spriteSourceSize":{"x":0,"y":0,"w":198,"h":198},"sourceSize":{"w":198,"h":198}},{"filename":"kirby19","frame":{"x":961,"y":1172,"w":182,"h":168},"rotated":false,"trimmed":false,"spriteSourceSize":{"x":0,"y":0,"w":182,"h":168},"sourceSize":{"w":182,"h":168}}],"meta":{"app":"https://www.leshylabs.com/apps/sstool/","version":"Leshy SpriteSheet Tool v0.8.4","image":"spritesheet.png","size":{"w":1890,"h":1417},"scale":1}}
+{
+    "frames": [
+        {
+            "filename": "kirby3",
+            "frame": {
+                "x": 935,
+                "y": 82,
+                "w": 205,
+                "h": 280
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 205,
+                "h": 280
+            },
+            "sourceSize": {
+                "w": 205,
+                "h": 280
+            }
+        },
+        {
+            "filename": "kirby1",
+            "frame": {
+                "x": 475,
+                "y": 89,
+                "w": 213,
+                "h": 273
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 213,
+                "h": 273
+            },
+            "sourceSize": {
+                "w": 213,
+                "h": 273
+            }
+        },
+        {
+            "filename": "kirby4",
+            "frame": {
+                "x": 1161,
+                "y": 112,
+                "w": 205,
+                "h": 250
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 205,
+                "h": 250
+            },
+            "sourceSize": {
+                "w": 205,
+                "h": 250
+            }
+        },
+        {
+            "filename": "kirby2",
+            "frame": {
+                "x": 694,
+                "y": 150,
+                "w": 227,
+                "h": 212
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 227,
+                "h": 212
+            },
+            "sourceSize": {
+                "w": 227,
+                "h": 212
+            }
+        },
+        {
+            "filename": "kirby7",
+            "frame": {
+                "x": 929,
+                "y": 376,
+                "w": 212,
+                "h": 250
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 212,
+                "h": 250
+            },
+            "sourceSize": {
+                "w": 212,
+                "h": 250
+            }
+        },
+        {
+            "filename": "kirby6",
+            "frame": {
+                "x": 731,
+                "y": 398,
+                "w": 182,
+                "h": 228
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 182,
+                "h": 228
+            },
+            "sourceSize": {
+                "w": 182,
+                "h": 228
+            }
+        },
+        {
+            "filename": "kirby8",
+            "frame": {
+                "x": 1187,
+                "y": 398,
+                "w": 182,
+                "h": 228
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 182,
+                "h": 228
+            },
+            "sourceSize": {
+                "w": 182,
+                "h": 228
+            }
+        },
+        {
+            "filename": "kirby5",
+            "frame": {
+                "x": 468,
+                "y": 413,
+                "w": 228,
+                "h": 213
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 228,
+                "h": 213
+            },
+            "sourceSize": {
+                "w": 228,
+                "h": 213
+            }
+        },
+        {
+            "filename": "kirby10",
+            "frame": {
+                "x": 710,
+                "y": 639,
+                "w": 205,
+                "h": 236
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 205,
+                "h": 236
+            },
+            "sourceSize": {
+                "w": 205,
+                "h": 236
+            }
+        },
+        {
+            "filename": "kirby11",
+            "frame": {
+                "x": 929,
+                "y": 647,
+                "w": 227,
+                "h": 228
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 227,
+                "h": 228
+            },
+            "sourceSize": {
+                "w": 227,
+                "h": 228
+            }
+        },
+        {
+            "filename": "kirby9",
+            "frame": {
+                "x": 483,
+                "y": 685,
+                "w": 205,
+                "h": 190
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 205,
+                "h": 190
+            },
+            "sourceSize": {
+                "w": 205,
+                "h": 190
+            }
+        },
+        {
+            "filename": "kirby12",
+            "frame": {
+                "x": 1165,
+                "y": 685,
+                "w": 204,
+                "h": 190
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 204,
+                "h": 190
+            },
+            "sourceSize": {
+                "w": 204,
+                "h": 190
+            }
+        },
+        {
+            "filename": "kirby14",
+            "frame": {
+                "x": 724,
+                "y": 896,
+                "w": 205,
+                "h": 214
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 205,
+                "h": 214
+            },
+            "sourceSize": {
+                "w": 205,
+                "h": 214
+            }
+        },
+        {
+            "filename": "kirby16",
+            "frame": {
+                "x": 1172,
+                "y": 903,
+                "w": 250,
+                "h": 207
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 250,
+                "h": 207
+            },
+            "sourceSize": {
+                "w": 250,
+                "h": 207
+            }
+        },
+        {
+            "filename": "kirby15",
+            "frame": {
+                "x": 931,
+                "y": 918,
+                "w": 210,
+                "h": 192
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 210,
+                "h": 192
+            },
+            "sourceSize": {
+                "w": 210,
+                "h": 192
+            }
+        },
+        {
+            "filename": "kirby13",
+            "frame": {
+                "x": 505,
+                "y": 933,
+                "w": 191,
+                "h": 177
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 191,
+                "h": 177
+            },
+            "sourceSize": {
+                "w": 191,
+                "h": 177
+            }
+        },
+        {
+            "filename": "sprite17",
+            "frame": {
+                "x": 1119,
+                "y": 1115,
+                "w": 39,
+                "h": 89
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 39,
+                "h": 89
+            },
+            "sourceSize": {
+                "w": 39,
+                "h": 89
+            }
+        },
+        {
+            "filename": "kirby20",
+            "frame": {
+                "x": 1163,
+                "y": 1127,
+                "w": 213,
+                "h": 213
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 213,
+                "h": 213
+            },
+            "sourceSize": {
+                "w": 213,
+                "h": 213
+            }
+        },
+        {
+            "filename": "kirby17",
+            "frame": {
+                "x": 505,
+                "y": 1134,
+                "w": 183,
+                "h": 206
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 183,
+                "h": 206
+            },
+            "sourceSize": {
+                "w": 183,
+                "h": 206
+            }
+        },
+        {
+            "filename": "kirby18",
+            "frame": {
+                "x": 734,
+                "y": 1142,
+                "w": 198,
+                "h": 198
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 198,
+                "h": 198
+            },
+            "sourceSize": {
+                "w": 198,
+                "h": 198
+            }
+        },
+        {
+            "filename": "kirby19",
+            "frame": {
+                "x": 961,
+                "y": 1172,
+                "w": 182,
+                "h": 168
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 182,
+                "h": 168
+            },
+            "sourceSize": {
+                "w": 182,
+                "h": 168
+            }
+        }
+    ],
+    "meta": {
+        "app": "https://www.leshylabs.com/apps/sstool/",
+        "version": "Leshy SpriteSheet Tool v0.8.4",
+        "image": "spritesheet.png",
+        "size": {
+            "w": 1890,
+            "h": 1417
+        },
+        "scale": 1
+    }
+}
