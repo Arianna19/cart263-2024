@@ -36,8 +36,9 @@ class MainMenu extends Phaser.Scene
 
         this.add.text(20, 20, 'High Score: ' + this.registry.get('highscore'), fontStyle);
 
-        let logo = this.add.image(400, -200, 'logo');
+        let logo = this.add.image(500, -500, 'logo');
 
+        logo.setScale(.5)
         if (!this.music)
         {
             this.music = this.sound.play('music', { loop: true });

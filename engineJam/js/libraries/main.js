@@ -5,7 +5,7 @@
 const config = {
     type: Phaser.AUTO,
     width: 1000,
-    height: 1000,
+    height: 890,
     backgroundColor: '#008eb0',
     parent: 'phaser-example',
     scene: [ Boot, Preloader, MainMenu, MainGame ]

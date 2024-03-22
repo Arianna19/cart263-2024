@@ -11,7 +11,7 @@
 
     preload ()
     {
-        this.loadText = this.add.text(400, 360, 'Loading ...', { fontFamily: 'Arial', fontSize: 64, color: '#e3f2ed' });
+        this.loadText = this.add.text(500, 445, 'Loading ...', { fontFamily: 'Arial', fontSize: 90, color: '#d74894' });
 
         this.loadText.setOrigin(0.5);
         this.loadText.setStroke('#203c5b', 6);
@@ -25,9 +25,9 @@
         //  Audio ...
         this.load.setPath('assets/sounds/');
 
-        this.load.audio('music', [  'bark.mp3' ]);
-        this.load.audio('countdown', [  'bark.mp3' ]);
-        this.load.audio('match', [ 'bark.mp3' ]);
+        this.load.audio('music', [  'Song.mp3' ]); 
+        this.load.audio('countdown', ['bark.mp3' ]);
+        this.load.audio('match', [ 'KirbyHi.mp3' ]);
     }
 
     create ()

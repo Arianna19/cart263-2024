@@ -47,7 +47,7 @@ class MainGame extends Phaser.Scene
                 cellWidth: 198,
                 cellHeight: 198,
                 x: 199,
-                y: 199
+                y: 149
             }
         });
 
@@ -67,7 +67,7 @@ class MainGame extends Phaser.Scene
         };
 
         this.timerText = this.add.text(20, 20, '30:00', fontStyle);
-        this.scoreText = this.add.text(530, 20, 'Found: 0', fontStyle);
+        this.scoreText = this.add.text(760, 20, 'Found: 0', fontStyle);
 
         let children = this.emojis.getChildren();
 
@@ -92,7 +92,11 @@ class MainGame extends Phaser.Scene
 
         this.timer = this.time.addEvent({ delay: 30000, callback: this.gameOver, callbackScope: this });
 
-       // this.sound.play('countdown', { delay: 27 });
+        let bark = this.sound.add('countdown', { delay: 23 }  );
+        bark.loop = true; 
+        bark.setVolume(30)
+        bark.play();
+        
     }
 
     selectEmoji (pointer, emoji)
@@ -133,7 +137,7 @@ class MainGame extends Phaser.Scene
                     onComplete: () => this.newRound()
                 });
         
-               // this.sound.play('match');
+                this.sound.play('match');
             }
             else
             {
