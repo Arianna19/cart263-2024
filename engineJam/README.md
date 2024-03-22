@@ -14,3 +14,8 @@ Funs:
 Making the game pretty
 Finding fun sprite images
 Making the code my own ishhhhh
+
+Key Takeway:
+Phaser is hard 
+I don't like Phaser 
+P5.js is nicer than Phaser
