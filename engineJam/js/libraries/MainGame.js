@@ -8,14 +8,14 @@ class MainGame extends Phaser.Scene
 
         this.emojis;
 
-        this.circle1;
-        this.circle2;
+        this.circle1; //circle that surrounds the selected kirby that the user chose 
+        this.circle2; //second circle
 
         this.child1;
         this.child2;
 
         this.selectedEmoji = null;
-        this.matched = false;
+        this.matched = false; 
 
         this.score = 0;
         this.highscore = 0;
@@ -29,7 +29,7 @@ class MainGame extends Phaser.Scene
     {
         this.add.image(400, 300, 'background');
 
-        this.circle1 = this.add.circle(0, 0, 99).setStrokeStyle(3, 0xf8960e);
+        this.circle1 = this.add.circle(0, 0, 99).setStrokeStyle(3, 0xf8960e); //how the circles are stylized
         this.circle2 = this.add.circle(0, 0, 99).setStrokeStyle(3, 0x00ff00);
 
         this.circle1.setVisible(false);
@@ -51,6 +51,7 @@ class MainGame extends Phaser.Scene
             }
         });
 
+        //the following is styling used for the timer and the counter of matched pairs found
         const fontStyle = {
             fontFamily: 'Arial',
             fontSize: 48,
@@ -92,9 +93,10 @@ class MainGame extends Phaser.Scene
 
         this.timer = this.time.addEvent({ delay: 30000, callback: this.gameOver, callbackScope: this });
 
+        //make the bark sound and the settings it has to be heard on top of the bg music
         let bark = this.sound.add('countdown', { delay: 23 }  );
         bark.loop = true; 
-        bark.setVolume(30)
+        bark.setVolume(30); 
         bark.play();
         
     }
@@ -109,7 +111,7 @@ class MainGame extends Phaser.Scene
         //  Is this the first or second selection?
         if (!this.selectedEmoji)
         {
-            //  Our first emoji
+            //  Our first kirby selection
             this.circle1.setPosition(emoji.x, emoji.y);
             this.circle1.setVisible(true);
 
@@ -117,7 +119,7 @@ class MainGame extends Phaser.Scene
         }
         else if (emoji !== this.selectedEmoji)
         {
-            //  Our second emoji
+            //  Our second kirby selection
 
             //  Is it a match?
             if (emoji.frame.name === this.selectedEmoji.frame.name)
@@ -204,7 +206,7 @@ class MainGame extends Phaser.Scene
 
         console.log('Pair: ', index1, index2);
 
-        //  Clear the currently selected emojis (if any)
+        //  Clear the currently selected kirbies (if any)
         this.selectedEmoji = null;
 
         //  Stagger tween them all in

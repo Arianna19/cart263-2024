@@ -10,6 +10,11 @@ Overall concept:
 4. Have a fun audio aspect elements
 5. Final product is just a personalized phaser 3 game with EVERYTHING KIRBY
 
+LINKS THAT AMAZINGLY HELPED ME FOR UNDERSTANDING HOW PHASER 3 WORKS
+https://www.leshylabs.com/apps/sstool/
+https://www.joshmorony.com/how-to-create-animations-in-phaser-with-a-texture-atlas/
+
+
 */
 
 "use strict";
@@ -48,6 +53,7 @@ class MainMenu extends Phaser.Scene
             }
         };
 
+        //honestly most of this is just for the titles being loaded at the very start of the game from what i understand
         this.add.text(20, 20, 'High Score: ' + this.registry.get('highscore'), fontStyle);
 
         let logo = this.add.image(500, -500, 'logo');
