@@ -50,7 +50,15 @@ function preload() {
   animal["bear"] = (ml5.sketchRNN('bear'));
   animal["catpig"] = (ml5.sketchRNN('catpig'));
   animal["dogbunny"] = (ml5.sketchRNN('dogbunny'));
-  animal["crab"] = (ml5.sketchRNN('crab'));
+  animal["crab"] = (ml5.sketchRNN('crab')); //new
+  animal["hedgehog"] = (ml5.sketchRNN('hedgehog')); //new
+  animal["kangaroo"] = (ml5.sketchRNN('kangaroo')); //new
+  animal["lion"] = (ml5.sketchRNN('lion')); //new
+  animal["lionsheep"] = (ml5.sketchRNN('lionsheep')); //new 
+  animal["tiger"] = (ml5.sketchRNN('tiger')); //new
+  animal["swan"] = (ml5.sketchRNN('swan')); //new
+  animal["whale"] = (ml5.sketchRNN('whale')); //new
+  animal["duck"] = (ml5.sketchRNN('duck'));
   animal["dolphin"] = (ml5.sketchRNN('dolphin'));
   animal["frog"] = (ml5.sketchRNN('frog'));
   animal["monkey"] = (ml5.sketchRNN('monkey'));

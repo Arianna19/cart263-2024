@@ -2,6 +2,8 @@
 
 This prototype is mostly a test on how I'm going to go about this Final Project "aesthetical wise", for now I only want to test out what colours or vibe I really want to go on based off of my proposal. I'm really playing with imagery and colour palette. At the moment it might look like a rainbow fiasco, this is only because a major goal of this project is me pimping up the original Ai Jam and learning how to play with HTML, JS, P5.js and ml5.js all together. 
 
+Also adding more animals to make it funner and more diverse
+
 
 
 
