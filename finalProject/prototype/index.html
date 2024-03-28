@@ -15,8 +15,14 @@
   <script src="js/libraries/p5.sound.min.js"></script>
   <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
   <script src="js/libraries/p5.speech.js"></script>
-  <script src="js/script.js"></script>
+  <script src="js/script.js"></script>;
 
+  <div class='image'>
+  <img id=kirbyImage src="assets/images/Paint.png" width = "400" height = "300">
+</div>
+
+  <body>
+  </body>
 
   <div id="wrapper">
     Ask me to draw one of the following animals<br>
@@ -71,10 +77,32 @@
           <li>Frog</li>
       </ul>
   </div>
+
+  <div>
+    <div class="controls">
+      <div class="title">sketch</div>
+      <div class="type">   <!--the type of paint brush or pencil user can use-->
+        <input type="radio" name="pen-type" id="pen-pencil" checked>
+        <label for ="pen-pencil">
+          <i class=" "fa fa-pencil"></i>
+        </label>
+        <input type="radio" name="pen-type" id="pen-brush">
+        <label for="pen-brush">
+          <i class="fa fa-paint-brush"></i>
+        </label>
+
+      <div class="size">   <!--size of brush stroke(width of it)-->
+        <label for="pen-size">Size</label>
+        <input type="range" id="pen-size" min="1" max="50">
+      </div>
+    </div>
+
+    <div class="color">   <!--color options that can be chosen-->
+      <label for="pen-color">Color</label>
+      <input type="color" id="pen-color" value="#000">
+
+  </div>
 </div>
 </head>
-
-<body>
-</body>
 
 </html>

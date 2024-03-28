@@ -20,6 +20,8 @@ ml5 Example
 SketchRNN
 === */
 
+//let bgImage;
+
 //The speech synthesizer
 const speechSynthesizer = new p5.Speech();
 
@@ -73,11 +75,11 @@ function preload() {
   animal["squirrel"] = (ml5.sketchRNN('squirrel'));
   animal["pig"] = (ml5.sketchRNN('pig', modelReady));
 
-
-
   speechRecognizer.continuous = true; //listens all the time
   speechRecognizer.onResult = handleVoiceInput; //call this function
   speechRecognizer.start();
+
+ // bgImage = loadImage('assets/images/bgpaint.jpg');
 
 }
 
@@ -100,8 +102,9 @@ function handleVoiceInput() {
 }
 
 function setup() {
-  createCanvas(640, 480);
+  createCanvas(800, 480);
   background(220);
+ // background(bgImage)
 
   // Button to reset drawing
   let button = createButton('DRAW AGAIN');
@@ -118,6 +121,7 @@ function modelReady() {
 
 // Reset the drawing
 function startDrawing() {
+  
 
   //text to show user what the computer is generating 
   background(220);
@@ -143,7 +147,7 @@ function draw() {
     // If the pen is down, draw a line
     if (previous_pen == 'down') {
       push();
-      stroke(0);
+      stroke(0); //where the stroke changes colour 
       strokeWeight(3.0);
       line(x, y, x + strokePath.dx, y + strokePath.dy);
       pop();

@@ -8,8 +8,10 @@ using the CSS Grid.
 Also hides overflow.
 
 **********************************************/
-
+html,
 body {
+
+  background-image: url('https://i.pinimg.com/736x/1b/7b/c1/1b7bc17f86a3aa83a837b91b363d6e33.jpg');
   padding: 0;
   margin: 0;
   display: grid; /* Set up the grid and justify/align to center */
@@ -17,10 +19,20 @@ body {
   align-content: center;
   height: 100vh; /* Body is the height of the viewport */
   overflow: hidden; /* Hide anything that goes off the window size */
+
+
+}
+
+#kirbyImage {
+  position: center;
+
 }
 
 #wrapper {
-  border: 10px solid rgb(199, 42, 42);
+  font-size: 25px;
+  font-weight: bold;
+  font-family: "Lucida Handwriting", "Courier New", monospace;
+  border: 0px solid rgb(199, 42, 42);
   text-align: center;
 }
 .container {
@@ -30,6 +42,7 @@ body {
 
 
 .block {
+  font-size: 14px;
   flex: 1;
   padding: 20px;
   background-color: #f9f9f9;
