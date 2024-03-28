@@ -24,7 +24,10 @@ body {
 }
 
 #kirbyImage {
-  position: center;
+  position: absolute;
+  top: 400px;
+  left: 0;
+
 
 }
 
