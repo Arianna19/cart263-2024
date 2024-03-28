@@ -1,8 +1,7 @@
 /**
-Ai Jam: Ask me to Draw an Animal! I'll Listen and Draw
+Final Project PROTOTYPE: //From Ai Jam// Ask me to Draw an Animal! I'll Listen and Draw
 Arianna Narita
 
-Making my first AI project using ml5.js
 Overall Idea: 
 1. Talk (say an animal in the list)
 2. Computer draws what you said 
