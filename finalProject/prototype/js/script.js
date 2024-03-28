@@ -43,14 +43,15 @@ let loadingImages = true;
 // For when SketchRNN is fixed
 function preload() {
   // See a list of all supported models: https://github.com/ml5js/ml5-library/blob/master/src/SketchRNN/models.js
-  // list of animals ml5 recongnizes
+  // list of animals ml5 recongnizes (28 animals)
   animal["cat"] = (ml5.sketchRNN('cat'));
   animal["lobster"] = (ml5.sketchRNN('lobster'));
   animal["bird"] = (ml5.sketchRNN('bird'));
   animal["bear"] = (ml5.sketchRNN('bear'));
   animal["catpig"] = (ml5.sketchRNN('catpig'));
   animal["dogbunny"] = (ml5.sketchRNN('dogbunny'));
-  animal["crab"] = (ml5.sketchRNN('crab')); //new
+  animal["crab"] = (ml5.sketchRNN('crab')); 
+  animal["spider"] = (ml5.sketchRNN('spider')); //new
   animal["hedgehog"] = (ml5.sketchRNN('hedgehog')); //new
   animal["kangaroo"] = (ml5.sketchRNN('kangaroo')); //new
   animal["lion"] = (ml5.sketchRNN('lion')); //new
@@ -58,7 +59,8 @@ function preload() {
   animal["tiger"] = (ml5.sketchRNN('tiger')); //new
   animal["swan"] = (ml5.sketchRNN('swan')); //new
   animal["whale"] = (ml5.sketchRNN('whale')); //new
-  animal["duck"] = (ml5.sketchRNN('duck'));
+  animal["duck"] = (ml5.sketchRNN('duck')); //new
+  animal["rabbit"] = (ml5.sketchRNN('rabbit')); //new
   animal["dolphin"] = (ml5.sketchRNN('dolphin'));
   animal["frog"] = (ml5.sketchRNN('frog'));
   animal["monkey"] = (ml5.sketchRNN('monkey'));
@@ -121,7 +123,7 @@ function startDrawing() {
   background(220);
   push();
   textSize(35);
-  fill(164, 39, 186)
+  fill(164, 39, 186);
   textFont('Georgia');
   text('Drawing a ' + select, 25, 50);
   pop();
@@ -162,9 +164,10 @@ function draw() {
 
   if (loadingImages) {
     push();
+    fill(252, 186, 3);
     textSize(25);
-    textFont('Georgia');
-    text('Animals loading please wait...', 320 - 150, 240);
+    textFont('Lucida Handwriting');
+    text('Your canvas is loading please wait...', 320 - 260, 240);
     pop();
   }
 

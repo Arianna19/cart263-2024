@@ -20,11 +20,12 @@ body {
 }
 
 #wrapper {
-  border: 1px solid blue;
+  border: 10px solid rgb(199, 42, 42);
   text-align: center;
 }
 .container {
   display: flex;
+  
 }
 
 
@@ -32,6 +33,7 @@ body {
   flex: 1;
   padding: 20px;
   background-color: #f9f9f9;
+  font-family: "Lucida Handwriting", "Courier New", monospace;
 }
 
 .block:first-child {
