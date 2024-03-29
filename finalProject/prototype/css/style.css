@@ -27,8 +27,12 @@ body {
   position: absolute;
   top: 400px;
   left: 0;
+}
 
-
+#kirbyTitle {
+  position: absolute;
+  top: 400px;
+  left: 0;
 }
 
 #wrapper {
