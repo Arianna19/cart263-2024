@@ -70,3 +70,25 @@ body {
   list-style-type: none; /* Remove bullet points */
   text-align: center; /* Align list items to the left */
 }
+
+.dot {
+ 
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  display: flex;
+
+}
+
+
+.posD{
+ position: absolute;
+  bottom: 20%;
+  left: 72%;
+}
+
+.posDD{
+  position: absolute;
+  bottom: 40%;
+  left: 76%;
+ }

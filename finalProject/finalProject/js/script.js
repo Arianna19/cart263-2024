@@ -1,11 +1,11 @@
 /**
-Final Project PROTOTYPE: //From Ai Jam// Ask me to Draw an Animal! I'll Listen and Draw
+Final Project: Ask me to Draw an Animal! I'll Listen and Draw
 Arianna Narita
 
 Overall Idea: 
 1. Talk (say an animal in the list)
 2. Computer draws what you said 
-3. Have fun talking to it by seeing what animals it can draw]
+3. Have fun talking to it by seeing what animals it can draw
 4. Make fun of the doodle library of ml5 in how sometimes the animals dont look right
 
 "use strict";
@@ -39,7 +39,8 @@ let strokePath;
 
 let animal = [];
 let select = "cat";
-
+let col = "rgb(0, 0, 0)"
+let sizeStroke = 8
 let loadingImages = true;
 
 // For when SketchRNN is fixed
@@ -111,6 +112,29 @@ function setup() {
   button.mousePressed(startDrawing);
 
 
+  // color pickeerr thingy 
+  var elements = document.getElementsByClassName("dot");
+  var myFunction = function() {
+      var attribute = this.style.backgroundColor;
+      col = attribute
+  };
+  for (var i = 0; i < elements.length; i++) {
+    console.log("hello")
+      elements[i].addEventListener('click', myFunction, false);
+  }
+  
+
+
+  const value = document.querySelector("#value");
+  const input = document.querySelector("#pi_input");
+  value.textContent = input.value;
+  input.addEventListener("input", (event) => {
+    value.textContent = event.target.value;
+    sizeStroke = value.textContent
+    console.log(value.textContent)
+  });
+
+
 }
 
 function modelReady() {
@@ -147,8 +171,8 @@ function draw() {
     // If the pen is down, draw a line
     if (previous_pen == 'down') {
       push();
-      stroke(0); //where the stroke changes colour 
-      strokeWeight(3.0);
+      stroke(col); //where the stroke changes colour 
+      strokeWeight(sizeStroke);
       line(x, y, x + strokePath.dx, y + strokePath.dy);
       pop();
     }
@@ -182,3 +206,4 @@ function draw() {
 function gotStroke(err, s) { //format ml5 uses to return a result
   strokePath = s;
 }
+

@@ -1,4 +1,4 @@
-# Final Project: Prototype from Ai Jam
+# Final Project: 
 
 This prototype is mostly a test on how I'm going to go about this Final Project "aesthetical wise", for now I only want to test out what colours or vibe I really want to go on based off of my proposal. I'm really playing with imagery and colour palette. At the moment it might look like a rainbow fiasco, this is only because a major goal of this project is me pimping up the original Ai Jam and learning how to play with HTML, JS, P5.js and ml5.js all together. 
 
@@ -24,3 +24,11 @@ Having a program that interacts immediately with the user
 A mini drawing chatgbt but with audio!?
 
 HTML AND CSS ARE used to display the lists of the animals
+
+
+
+
+
+1. Be able to choose the colour of the stroke by clicking on circles
+2. Be able to choose the width of the stroke (three different types of widths)
+3. Make it prettier (font, kirby vibes)
