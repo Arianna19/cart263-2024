@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0>
+
+  <title>Prototype: Final!</title>
+
+  <!-- CSS stylesheet(s) -->
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+
+  <!-- Library script(s) -->
+  <script src="js/libraries/p5.min.js"></script>
+  <script src="js/libraries/p5.sound.min.js"></script>
+  <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
+  <script src="js/libraries/p5.speech.js"></script>
+  <script src="js/script.js"></script>;
+
+  <div class='image'>
+  <img id=kirbyImage src="assets/images/Paint.png" width = "600" height = "520">
+</div>
+
+  <body>
+  </body>
+
+  <div id="wrapper">
+    Ask me to draw one of the following animals<br>
+    Say "Draw a ..."
+  </div>
+
+  <div class="container">
+    <div class="block">
+        <ul>
+            <li>Cat</li>
+            <li>Lobster</li>
+            <li>Bird</li>
+            <li>Bear</li>
+            <li>Catpig</li>
+            <li>Dogbunny</li>
+            <li>Crab</li>
+        </ul>
+    </div>
+
+    <div class="block">
+      <ul>
+          <li>Dolphin</li>
+          <li>Hedgehog</li>
+          <li>Kangaroo</li>
+          <li>Lion</li>
+          <li>Lionsheep</li>
+          <li>Spider</li>
+          <li>Rabbit</li>
+      </ul>
+  </div>
+
+    <div class="block">
+        <ul>
+            <li>Monkey</li>
+            <li>Mermaid</li>
+            <li>Mosquito</li>
+            <li>Flamingo</li>
+            <li>Dog</li>
+            <li>Penguin</li>
+            <li>Parrot</li>
+        </ul>
+    </div>
+
+    <div class="block">
+      <ul>
+          <li>Squirrel</li>
+          <li>Pig</li>
+          <li>Swan</li>
+          <li>Whale</li>
+          <li>Duck</li>
+          <li>Tiger</li>
+          <li>Frog</li>
+      </ul>
+  </div>
+
+  <div>
+    <div class="controls">
+      <div class="title">sketch</div>
+      <div class="type">   <!--the type of paint brush or pencil user can use-->
+        <input type="radio" name="pen-type" id="pen-pencil" checked>
+        <label for ="pen-pencil">
+          <i class=" "fa fa-pencil"></i>
+        </label>
+        <input type="radio" name="pen-type" id="pen-brush">
+        <label for="pen-brush">
+          <i class="fa fa-paint-brush"></i>
+        </label>
+
+      <div class="size">   <!--size of brush stroke(width of it)-->
+        <label for="pen-size">Size</label>
+        <input type="range" id="pen-size" min="1" max="50">
+      </div>
+    </div>
+
+    <div class="color">   <!--color options that can be chosen-->
+      <label for="pen-color">Color</label>
+      <input type="color" id="pen-color" value="#000">
+
+  </div>
+</div>
+</head>
+
+</html>
