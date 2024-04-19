@@ -11,7 +11,6 @@ Also hides overflow.
 html,
 body {
 
-  background-image: url('https://i.pinimg.com/736x/1b/7b/c1/1b7bc17f86a3aa83a837b91b363d6e33.jpg');
   padding: 0;
   margin: 0;
   display: grid; /* Set up the grid and justify/align to center */
@@ -22,6 +21,21 @@ body {
 
 
 }
+
+
+html{
+  background-image: url('https://i.pinimg.com/736x/1b/7b/c1/1b7bc17f86a3aa83a837b91b363d6e33.jpg');
+}
+
+#wrapper {
+  font-size: 25px;
+  font-weight: bold;
+  font-family: "Lucida Handwriting", "Courier New", monospace;
+  border: 0px solid rgb(199, 42, 42);
+  margin-right: 30px;
+  text-align: center;
+}
+
 
 #kirbyImage {
   position: absolute;
@@ -34,61 +48,3 @@ body {
   top: 400px;
   left: 0;
 }
-
-#wrapper {
-  font-size: 25px;
-  font-weight: bold;
-  font-family: "Lucida Handwriting", "Courier New", monospace;
-  border: 0px solid rgb(199, 42, 42);
-  text-align: center;
-}
-.container {
-  display: flex;
-  
-}
-
-
-.block {
-  font-size: 14px;
-  flex: 1;
-  padding: 20px;
-  background-color: #f9f9f9;
-  font-family: "Lucida Handwriting", "Courier New", monospace;
-}
-
-.block:first-child {
-  border-right: none;
-}
-
-.block:last-child {
-  border-left: none;
-}
-
-.block ul {
-  margin-top: 0;
-  padding-left: 20px;
-  list-style-type: none; /* Remove bullet points */
-  text-align: center; /* Align list items to the left */
-}
-
-.dot {
- 
-  height: 60px;
-  width: 60px;
-  border-radius: 50%;
-  display: flex;
-
-}
-
-
-.posD{
- position: absolute;
-  bottom: 20%;
-  left: 72%;
-}
-
-.posDD{
-  position: absolute;
-  bottom: 40%;
-  left: 76%;
- }
