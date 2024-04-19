@@ -237,6 +237,7 @@ function restart() {
   strokeWeight(1);
   textSize(20);
   textAlign(CENTER);
+  textFont('Lucida Handwriting');
   text("REDRAW", (Body.canvasW - 150) / 2, Body.canvasH - 25);
   pop()
 }

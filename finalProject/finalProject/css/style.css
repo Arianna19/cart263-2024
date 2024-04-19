@@ -30,20 +30,35 @@ html{
   font-weight: bold;
   font-family: "Lucida Handwriting", "Courier New", "monospace";
   border: 0px solid rgb(199, 42, 42);
-  margin-right: 30px;
-  text-align: center;
+}
+
+#wrapperOne {
+  font-size: 25px;
+  font-family: "Lucida Handwriting", "Courier New", "monospace";
+  border: 0px solid rgb(199, 42, 42);
 }
 
 #wrapperTwo {
-  font-size: 25px;
-  top: 0;
+  position: absolute;
+  font-size: 20px;
+  top: 500px;
+  right: 475px;
   font-weight: bold;
   font-family: "Lucida Handwriting", "Courier New", "monospace";
   border: 0px solid rgb(199, 42, 42);
-  margin-right: 30px;
-  text-align: center;
+ 
 }
 
+#wrapperThree {
+  position: absolute;
+  font-size: 18px;
+  top: 225px;
+  right: 530px;
+  font-weight: bold;
+  font-family: "Lucida Handwriting", "Courier New", "monospace";
+  border: 0px solid rgb(199, 42, 42);
+ 
+}
 
 #kirbyImage {
   position: absolute;
@@ -54,5 +69,5 @@ html{
 #kirbyTitle {
   position: absolute;
   top: 450px;
-  left: 0;
+  left: 0px;
 }
