@@ -19,9 +19,7 @@ body {
   height: 100vh; /* Body is the height of the viewport */
   overflow: hidden; /* Hide anything that goes off the window size */
 
-
 }
-
 
 html{
   background-image: url('https://i.pinimg.com/736x/1b/7b/c1/1b7bc17f86a3aa83a837b91b363d6e33.jpg');
@@ -30,7 +28,17 @@ html{
 #wrapper {
   font-size: 25px;
   font-weight: bold;
-  font-family: "Lucida Handwriting", "Courier New", monospace;
+  font-family: "Lucida Handwriting", "Courier New", "monospace";
+  border: 0px solid rgb(199, 42, 42);
+  margin-right: 30px;
+  text-align: center;
+}
+
+#wrapperTwo {
+  font-size: 25px;
+  top: 0;
+  font-weight: bold;
+  font-family: "Lucida Handwriting", "Courier New", "monospace";
   border: 0px solid rgb(199, 42, 42);
   margin-right: 30px;
   text-align: center;
@@ -45,6 +53,6 @@ html{
 
 #kirbyTitle {
   position: absolute;
-  top: 400px;
+  top: 450px;
   left: 0;
 }

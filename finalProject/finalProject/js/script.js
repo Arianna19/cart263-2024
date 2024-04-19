@@ -7,6 +7,7 @@ Overall Idea:
 2. Computer draws what you said 
 3. Have fun talking to it by seeing what animals it can draw
 4. Make fun of the doodle library of ml5 in how sometimes the animals dont look right
+5. Personalize the weird looking animal by choosing its colours and the width of the paint brush 
 
 
 
@@ -40,12 +41,8 @@ let strokePath;
 let animal = [];
 let animalz = []
 let select = 0;
-let sizeStroke = 15 
+let sizeStroke = 15
 let loadingImages = true;
-
-
-
-
 
 // For when SketchRNN is fixed
 function preload() {
@@ -55,14 +52,14 @@ function preload() {
   animal[1] = (ml5.sketchRNN('lobster'));
   animal[2] = (ml5.sketchRNN('bird'));
   animal[3] = (ml5.sketchRNN('bear'));
-  animal[4] = (ml5.sketchRNN('catpig'));
-  animal[5] = (ml5.sketchRNN('dogbunny'));
-  animal[6] = (ml5.sketchRNN('crab')); 
+  animal[4] = (ml5.sketchRNN('scorpion'));
+  animal[5] = (ml5.sketchRNN('butterfly'));
+  animal[6] = (ml5.sketchRNN('crab'));
   animal[7] = (ml5.sketchRNN('spider')); //new
   animal[8] = (ml5.sketchRNN('hedgehog')); //new
   animal[9] = (ml5.sketchRNN('kangaroo')); //new
   animal[10] = (ml5.sketchRNN('lion')); //new
-  animal[11] = (ml5.sketchRNN('lionsheep')); //new 
+  animal[11] = (ml5.sketchRNN('snail')); //new 
   animal[12] = (ml5.sketchRNN('tiger')); //new
   animal[13] = (ml5.sketchRNN('swan')); //new
   animal[14] = (ml5.sketchRNN('whale')); //new
@@ -77,47 +74,46 @@ function preload() {
   animal[23] = (ml5.sketchRNN('flamingo'));
   animal[24] = (ml5.sketchRNN('penguin'));
   animal[25] = (ml5.sketchRNN('parrot'));
-  animal[26] = (ml5.sketchRNN('squirrel')); 
-  animal[27] = (ml5.sketchRNN('pig',modelReady)); 
-  
+  animal[26] = (ml5.sketchRNN('squirrel'));
+  animal[27] = (ml5.sketchRNN('pig', modelReady));
 
-  animalz[0] = 'cat'
-  animalz[1] = 'lobster'
-  animalz[2] = 'bird'
-  animalz[3] = 'bear'
-  animalz[4] = 'catpig'
-  animalz[5] = 'dogbunny'
-  animalz[6] = 'crab'
-  animalz[7] = 'spider'
-  animalz[8] = 'hedgehog'
-  animalz[9] = 'kangaroo'
-  animalz[10] ='lion'
-  animalz[11] ='lionsheep'
-  animalz[12] ='tiger'
-  animalz[13] ='swan'
-  animalz[14] ='whale'
-  animalz[15] ='duck'
-  animalz[16] ='rabbit'
-  animalz[17] ='dolphin'
-  animalz[18] ='frog'
-  animalz[19] ='monkey'
-  animalz[20] ='mermaid'
-  animalz[21] ='mosquito'
-  animalz[22] ='dog'
-  animalz[23] ='flamingo'
-  animalz[24] ='penguin'
-  animalz[25] ='parrot'
-  animalz[26] ='squirrel'
-  animalz[27] ='pig'
 
+  //following is the just an array for the list grid at the top of the screen 
+  animalz[0] = 'Cat';
+  animalz[1] = 'Lobster';
+  animalz[2] = 'Bird';
+  animalz[3] = 'Bear';
+  animalz[4] = 'Scorpion';
+  animalz[5] = 'Butterfly';
+  animalz[6] = 'Crab';
+  animalz[7] = 'Spider';
+  animalz[8] = 'Hedgehog';
+  animalz[9] = 'Kangaroo';
+  animalz[10] = 'Lion';
+  animalz[11] = 'Snail';
+  animalz[12] = 'Tiger';
+  animalz[13] = 'Swan';
+  animalz[14] = 'Whale';
+  animalz[15] = 'Duck';
+  animalz[16] = 'Rabbit';
+  animalz[17] = 'Dolphin';
+  animalz[18] = 'Frog';
+  animalz[19] = 'Monkey';
+  animalz[20] = 'Mermaid';
+  animalz[21] = 'Mosquito';
+  animalz[22] = 'Dog';
+  animalz[23] = 'Flamingo';
+  animalz[24] = 'Penguin';
+  animalz[25] = 'Parrot';
+  animalz[26] = 'Squirrel';
+  animalz[27] = 'Pig';
 
   speechRecognizer.continuous = true; //listens all the time
   speechRecognizer.onResult = handleVoiceInput; //call this function
-  speechRecognizer.start(); 
-
+  speechRecognizer.start();
 
 }
-let body = new Body()
+let body = new Body();
 
 //function that handles the voice being inputed by user and prints it out and reads it in console
 function handleVoiceInput() {
@@ -131,23 +127,21 @@ function handleVoiceInput() {
   }
   //lower case
 
-  for (var x = 0 ; x<animal.length;x++){
-    if(!loadingImages)
-    if(animal[x].model.info.name == guessedanimal )
-    {
-      console.log("found a bicth")
-      select = x
-      startDrawing()
-    }   
+  for (var x = 0; x < animal.length; x++) {
+    if (!loadingImages);
+    if (animal[x].model.info.name == guessedanimal) {
+      select = x;
+      startDrawing();
+    }
   }
 }
 
 function setup() {
-  createCanvas(Body.canvasW, Body.canvasH); 
-  push()
-  fill("#c7b7b7")
-  rect(0, 175, Body.canvasW - 150, Body.canvasH - 175);  
-  pop()
+  createCanvas(Body.canvasW, Body.canvasH);
+  push();
+  fill("#c7b7b7"); //colour of the main background canvas where computer draws 
+  rect(0, 175, Body.canvasW - 150, Body.canvasH - 175);
+  pop();
 }
 
 function modelReady() {
@@ -158,39 +152,39 @@ function modelReady() {
 
 // Reset the drawing
 function startDrawing() {
-  console.log("I have been caleed")
+  console.log("I have been called")
   //text to show user what the computer is generating 
 
   //background
   push()
-  fill("#c7b7b7")
-  rect(0, 175, Body.canvasW - 150, Body.canvasH - 175);  
+  fill("#c7b7b7"); //recalling and creating the background when new animal is asked
+  rect(0, 175, Body.canvasW - 150, Body.canvasH - 175); //kind of easy way of erasing the canvas before
   pop()
 
 
-  // Start in the middle
+  //Start in the middle
   x = width / 2;
   y = height / 2;
   animal[select].reset();
-  // Generate the first stroke path
+  //Generate the first stroke path
   animal[select].generate(gotStroke);
 }
 
 function draw() {
-  restart()
-  body.draw()
-  if(!loadingImages){
-  push();
-  textSize(35);
-  fill(164, 39, 186);
-  textFont('Georgia');
-  text('Drawing a ' + animal[select].model.info.name, 25, 250);
-  pop();
+  restart(); //calling restart function
+  body.draw();
+  if (!loadingImages) {
+    push();
+    textSize(35);
+    fill(164, 39, 186);
+    textFont('Georgia');
+    text('Drawing a ' + animal[select].model.info.name, 25, 250); //text in the corner telling user what ml5 is trying to draw
+    pop();
   }
-  
+
   // If something new to draw
   if (strokePath) {
-   
+
     // If the pen is down, draw a line
     if (previous_pen == 'down') {
       push();
@@ -218,10 +212,9 @@ function draw() {
     fill(252, 186, 3);
     textSize(25);
     textFont('Lucida Handwriting');
-    text('Your canvas is loading please wait...', 320 - 260, 240);
+    text('Your animal farm is loading please wait...', 320 - 260, 240);
     pop();
   }
-
 
 }
 
@@ -230,21 +223,20 @@ function gotStroke(err, s) { //format ml5 uses to return a result
   strokePath = s;
 }
 
-
-
-function restart(){
-  if(mouseIsPressed) {
+//funtion for the redraw button
+function restart() {
+  if (mouseIsPressed) {
     //console.log("lol")
-    if(mouseX > 0 && mouseX < Body.canvasW - 150 && mouseY < Body.canvasH && mouseY > Body.canvasH - 70) {
-      startDrawing()
+    if (mouseX > 0 && mouseX < Body.canvasW - 150 && mouseY < Body.canvasH && mouseY > Body.canvasH - 70) {
+      startDrawing();
     }
-  } 
+  }
   push()
-  rect(0,Body.canvasH - 70,Body.canvasW - 150,70)
+  rect(0, Body.canvasH - 70, Body.canvasW - 150, 70)
   stroke(0);
   strokeWeight(1);
   textSize(20);
   textAlign(CENTER);
-  text("REDRAW",(Body.canvasW - 150)/2,Body.canvasH - 25 );
+  text("REDRAW", (Body.canvasW - 150) / 2, Body.canvasH - 25);
   pop()
 }

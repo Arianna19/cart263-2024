@@ -6,10 +6,6 @@ Also adding more animals to make it funner and more diverse
 
 
 
-
-
-
-
 ////The following is just a reminder of what this program initially does from the Ai Jam project////
 
 Overall concept is that the users says an animal in the list given by an array and the computer prints/draws out a doodle from the ml5.js library. I mixed both audio from the previous lesson and ai with the drawing libray from ml5.js in this prototype. 
@@ -27,7 +23,7 @@ HTML AND CSS ARE used to display the lists of the animals
 
 
 
-
+////List to just keep me in track in what I want to accomplish////
 
 1. Be able to choose the colour of the stroke by clicking on circles
 2. Be able to choose the width of the stroke (three different types of widths)
