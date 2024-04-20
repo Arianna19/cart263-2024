@@ -112,6 +112,8 @@ function preload() {
   speechRecognizer.onResult = handleVoiceInput; //call this function
   speechRecognizer.start();
 
+
+
 }
 let body = new Body();
 
@@ -127,7 +129,7 @@ function handleVoiceInput() {
   }
   //lower case
 
-  for (var x = 0; x < animal.length; x++) {
+  for (let x = 0; x < animal.length; x++) {
     if (!loadingImages);
     if (animal[x].model.info.name == guessedanimal) {
       select = x;
@@ -139,7 +141,8 @@ function handleVoiceInput() {
 function setup() {
   createCanvas(Body.canvasW, Body.canvasH);
   push();
-  fill("#c7b7b7"); //colour of the main background canvas where computer draws 
+  strokeWeight(0);
+  fill("#df6da9"); //colour of the main background canvas where computer draws 
   rect(0, 175, Body.canvasW - 150, Body.canvasH - 175);
   pop();
 }
@@ -157,7 +160,8 @@ function startDrawing() {
 
   //background
   push()
-  fill("#c7b7b7"); //recalling and creating the background when new animal is asked
+  strokeWeight(0);
+  fill("#df6da9"); //recalling and creating the background when new animal is asked
   rect(0, 175, Body.canvasW - 150, Body.canvasH - 175); //kind of easy way of erasing the canvas before
   pop()
 
@@ -175,10 +179,10 @@ function draw() {
   body.draw();
   if (!loadingImages) {
     push();
-    textSize(35);
+    textSize(40);
     fill(164, 39, 186);
-    textFont('Georgia');
-    text('Drawing a ' + animal[select].model.info.name, 25, 250); //text in the corner telling user what ml5 is trying to draw
+    textFont('Lucida Handwriting');
+    text('Drawing a ' + animal[select].model.info.name, 15, 220); //text in the corner telling user what ml5 is trying to draw
     pop();
   }
 
@@ -207,12 +211,13 @@ function draw() {
     }
   }
 
+  //loading text screen while the models are being loaded for program
   if (loadingImages) {
     push();
     fill(252, 186, 3);
     textSize(25);
     textFont('Lucida Handwriting');
-    text('Your animal farm is loading please wait...', 320 - 260, 240);
+    text('Your animal farm is loading please wait...', 110, 450);
     pop();
   }
 
@@ -232,7 +237,12 @@ function restart() {
     }
   }
   push()
+  fill(71,188,180,255);
+  strokeWeight(0);
   rect(0, Body.canvasH - 70, Body.canvasW - 150, 70)
+  pop();
+
+  push();
   stroke(0);
   strokeWeight(1);
   textSize(20);

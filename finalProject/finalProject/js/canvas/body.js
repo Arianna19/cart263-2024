@@ -1,19 +1,18 @@
+//class that kind of calls all the stuff to the main canvas
+
 class Body {
+    //settings of the giant canvas that holds everything
     static canvasH = 800;
     static canvasW = 1000;
-    static bgcolor = "red"
+    static bgcolor = "red";
     constructor(){
-        this.animal = new Animal()
-        this.color = new ColorNsize()
+        this.animal = new Animal();
+        this.color = new ColorNsize();
     }
 
     draw(){
-        this.animal.draw()
-        this.color.draw()
-        push()
-        fill("#c7b7b7")
-        translate(0, 175);
-        pop()
+        this.animal.draw();
+        this.color.draw();
     }
 
 }

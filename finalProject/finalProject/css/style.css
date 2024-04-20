@@ -66,6 +66,14 @@ html{
   left: 0;
 }
 
+#kirbyImageTwo {
+  position: absolute;
+  /*transform: skew(-10deg, 15deg);*/
+
+  top: 30px; /*-42 490*/
+  right: 355px;
+}
+
 #kirbyTitle {
   position: absolute;
   top: 450px;
